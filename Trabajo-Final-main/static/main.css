@@ -1,0 +1,464 @@
+/* ------------------ NAV ------------------*/
+
+* {
+	padding: 0%;
+	margin: 0%;
+	box-sizing: border-box;
+}
+
+.main {
+	background-color: #e2a83c;
+
+} 
+
+nav {
+	background-color: #fff; 
+	box-shadow: 0px 5px 20px rgba(24, 26, 24, 0.1);
+	border-radius: 4px;
+	border: 1px solid #1f53c5;
+}
+.nav__link {
+	color: #2e2e2e;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.1rem;
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	transition: 0.2s ease;
+}
+.nav__link:hover {
+	color: #ea6988;
+}
+.nav__icon {
+	color: #2e2e2e;
+	transition: 0.2s ease;
+}
+.nav__icon:hover {
+	color: #ea6988;
+}
+/* nav-link subrayado */
+.nav__link:after {
+	background-color: #ea6988;
+	bottom: 0;
+	left: 0;
+	content: '';
+	height: 2px;
+	width: 100%;
+	position: absolute;
+	transform: scaleX(0);
+	transform-origin: bottom center;
+	transition: transform 0.25s ease-out;
+}
+.nav__link:hover:after {
+	transform: scaleX(1);
+	transform-origin: bottom center;
+}
+
+/*------------------ FOOTER ------------------*/
+footer {
+	background-color: #3f414d;
+}
+
+/*------------------ BANNER ------------------*/
+.banner {
+	/* background-color: #f4f3ef; */
+	background: linear-gradient(220.55deg, #e6e6f0 0%, #f4f3ef 100%);
+}
+.banner__zapato img {
+	object-fit: cover;
+}
+
+/*------------------ BOTON ------------------*/
+.boton {
+	display: inline-block;
+	border-radius: 4px;
+	background-color: #ea6988;
+	border: none;
+	/* color: #ffffff; */
+	text-align: center;
+	font-size: 17px;
+	padding: 10px;
+	width: 130px;
+	transition: all 0.5s;
+	cursor: pointer;
+}
+.boton span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+.boton span:after {
+	content: '»';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -15px;
+	transition: 0.5s;
+}
+.boton:hover span {
+	padding-right: 15px;
+}
+.boton:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+.boton:hover {
+	box-shadow: 2px 2px #2e2e2e;
+	top: 2px;
+}
+.boton:active {
+	box-shadow: none;
+	top: 6px;
+}
+
+/*------------------ TEXTO ------------------*/
+.color {
+	color: #ea6988;
+}
+
+/*------------------ CARRITO ------------------*/
+/* shopping cart count */
+.shopping {
+	position: relative;
+	text-align: center;
+}
+.shopping span {
+	background: #ea6988;
+	border-radius: 50%;
+	font-size: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	position: absolute;
+	top: 7px;
+	left: 80%;
+	padding: 1px 6px;
+}
+
+/* shopping lista */
+.carrito {
+	position: fixed;
+	top: 0;
+	left: 100%;
+	width: 40vw;
+	background-color: #1c1f25;
+	height: 100vh;
+	transition: 0.5s;
+	z-index: 9999;
+	overflow-y: auto;
+}
+.activo .carrito {
+	left: calc(100% - 40vw);
+}
+@media only screen and (max-width: 768px) {
+	.carrito {
+		width: 100vw;
+	}
+	.activo .carrito {
+		left: calc(100% - 100vw);
+	}
+}
+
+.carrito h4 {
+	color: #ea6988;
+	font-weight: 600;
+	margin: 0;
+	padding: 0 20px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+}
+.carrito .checkOut {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+.carrito .checkOut div {
+	background-color: #ea6988;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	cursor: pointer;
+}
+.carrito .checkOut div:nth-child(3) {
+	background-color: #1c1f25;
+	color: #fff;
+}
+
+.carritoLista {
+	padding: 0;
+}
+.carritoLista li {
+	display: grid;
+	grid-template-columns: 100px repeat(3, 1fr);
+	color: #fff;
+	background: #f6f6f618;
+	margin-bottom: 10px;
+}
+.carritoLista li div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.carritoLista li img {
+	width: 70%;
+}
+.carritoLista li button {
+	background: none;
+	border: none;
+}
+
+/*------------------ TARJETAS DE PRODUCTO ------------------*/
+.lista .item {
+	text-align: center;
+	background: #f6f6f6;
+	padding: 10px;
+	font-weight: 500;
+	margin: 10px;
+	transition: 0.4s;
+	width: 18rem;
+	border-radius: 4px;
+}
+@media only screen and (max-width: 425px) {
+	.lista .item {
+		width: 22rem;
+	}
+}
+.lista .item img {
+	width: 100%;
+	object-fit: cover;
+}
+.lista .item .nombre {
+	font-weight: 600;
+	margin-top: 10px;
+}
+.lista .item .precio {
+	margin: 10px;
+}
+.lista .item button {
+	background-color: #1c1f25;
+	width: 100%;
+}
+.lista .item button:hover {
+	background-color: #ea6988;
+}
+
+  /* --------------------NOSOTROS--------------------------- */
+
+  .tituloNosotros {
+	background-color: #ea6988;
+	border: 5px solid #bec4c7; 
+	font-style: oblique;
+	font-family: fantasy;
+	font-size: 60px;
+	text-shadow: -1px -1px 1px #aaa,
+             0px 4px 1px rgba(0,0,0,0.5),
+             4px 4px 5px rgba(0,0,0,0.7),
+             0px 0px 7px rgba(0,0,0,0.4);
+	
+  }
+ /*
+  .containerNosotros_Uno {
+	
+	justify-content: center;
+	display:flex;
+    align-items: center;
+    gap:2rem;
+	border-radius: 4px;
+	border: 1px solid #1f53c5;
+	background-color: #ea6988;
+  } */
+
+
+.tarjeta_uno{
+    height: 250px;
+    width: 1100px;
+    background-color: #d7dae9;
+    border-radius: 10%;
+    box-shadow: 16px 14px 20px #0000008c;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta_uno::before{
+    content: "";
+    position: absolute;
+    height: 300px;
+    width: 1200px;
+    background-image: conic-gradient(rgb(11, 26, 233) 20deg, transparent 120deg);
+    animation: rotar 5s linear infinite;
+}
+
+@keyframes rotar{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-360deg);
+    }
+}
+
+.tarjeta_uno::after{
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 1090px;
+    background-color: #41d1c5;
+    border-radius: 10%;
+    box-shadow: inset 16px 14px 20px #0000008c;;
+}
+
+
+.parrafo_uno{
+    color: rgb(25, 34, 26);
+    z-index: 2;
+    background-color: transparent;
+	font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'fantasy', Arial, sans-serif;
+    text-align: center;
+    text-shadow: 15px 15px 15px rgb(10, 10, 10);
+}
+
+  .containerNosotros_Dos {
+	flex-direction: row-reverse;
+	display:flex;
+    align-items: center;
+    gap:2rem;
+	border-radius: 4px;
+	border: 1px solid #1f53c5;
+	background-color: #ea6988;
+  } 
+ 
+  .img_Uno, .img_Dos {
+	height: 50vh;
+	width: 50vh;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-left: 10px;
+		
+  }
+
+  .parrafo_Nosotros {
+    font-size: 18px;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-evenly;
+  }
+
+  /* --------------------CONTACTO TITULO--------------------------- */
+  
+  .cajaTitulo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 50vh;
+	background-color: #000;
+	margin-left: 120px;
+	margin-right: 120px;
+	animation-name: alternado;
+	animation-duration: 10s;
+	position: relative;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+
+  }
+
+  @keyframes alternado {
+	0% {background-color: #000 0; left: 0; right: 0px}
+	25% {left: -50px;}
+	50% {left: -100px;}
+	75% {left: 100px;}
+	100% {left: 150px;}
+  }
+
+  .tituloContacto {
+	font-family: fantasy;
+	font-size: 60px;
+	font-weight: 100px;
+	color: #020202c5;
+	letter-spacing: 5px;
+	cursor: pointer;
+	transition: 1s;
+}
+
+.tituloContacto:hover{
+	color: #ffffff;
+	text-shadow: 10px 50px 100px #03e9f4,
+	0 0 20px #03e9f4,
+	0 0 30px #03f40f,
+	0 0 10px #f40303,
+}
+/* --------------------CONTACTO FORMULARIO--------------------------- */
+
+#formulario {
+    border: solid;
+    border-radius: 4px;
+	width: 100px;
+    padding: 15px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+ .container .formulario .datos {
+    margin-top: 20px;
+	margin-bottom: 20px;
+    background: #ea6988;
+    color: white;
+    width: 450px;
+    padding: 20px;
+    border-radius:  2px;
+    border: 1px solid #1f53c5;
+  }
+
+ .container .formulario p{
+    height: 350px;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 2%;
+  }
+
+ .container .formulario .imagen {
+    position: flex;
+  }
+
+ .container .formulario .imagen input {
+    background-color: #1f53c5;
+  }
+
+  .tituloContacto {
+	text-align: center;
+
+  }
+
+  .boton_enviar {
+    width: 100%;
+    background: #1f53c5;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin: 16px 0;
+    font-size: 16px;
+    border-radius:  4px;
+  }
+
+
+.container {
+		
+		background-color: #d7dae9;
+		box-shadow: 20px 10px 15px #0000008c;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+}
+

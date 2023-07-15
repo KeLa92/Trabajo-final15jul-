@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+
+{%block title %}Inicio{% endblock %}
+
+{% block banner %}
+
+<br>
+<div class="cajaTitulo">
+    <h2 class="tituloContacto">
+        Estamos a un click de distancia
+    </h2>
+</div>
+<br>
+    <div class="container">
+      <div class="formulario">
+        <div class="datos">
+          <form action="">
+            <div class="mb-3">
+              <label for="" class="form-label">Nombre completo</label>
+              <input type="text" class="form-control" placeholder="Nombre y apellido..." required>
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">@</span>
+              <input type="text" class="form-control" placeholder="e-m@ail" aria-label="Username"
+                aria-describedby="basic-addon1" required>
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Teléfono</label>
+              <input type="number" class="form-control" placeholder="15-1234-5678" required>
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Dejanos tu comentario</label>
+              <textarea name="" class="form-control" id="" cols="30" rows="10" placeholder="..."></textarea>
+            </div>
+            <div>
+                  <button type="button" class="boton_enviar" value="Enviar Mensaje">Enviar Mensaje</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d819.2355082688543!2d-58.61134171064963!3d-34.782234564936694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1689430793797!5m2!1ses!2sar" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+{% endblock %}
